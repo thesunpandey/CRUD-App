@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f4f9;
+        }
+        .navbar {
+            background-color: #1f1f1f;
+        }
+        .nav-link {
+            color: #d3d3d3;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+        }
+        .nav-link:hover {
+            background-color: #343a40;
+            color: #fff;
+            border-radius: 5px;
+        }
+        h2 {
+            text-align: center;
+            color: #495057;
+            margin-top: 2rem;
+        }
+        table {
+            margin-top: 2rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th {
+            background-color: #1f1f1f;
+            color: #fff;
+            text-align: center;
+        }
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .action-btn {
+            margin: 0 0.2rem;
+        }
+        .fa-edit {
+            color: #198754;
+        }
+        .fa-trash {
+            color: #dc3545;
+        }
+        .fa-key {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <%- include('layout/header') %>
+
+    <!-- Add a main content container -->
+    <div class="container mt-4">
+        <h2><%= message %></h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h3>User List</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th><i class="fa fa-user"></i> Profile Picture</th>
+                    <th><i class="fa fa-user-tag"></i> Name</th>
+                    <th><i class="fa fa-envelope"></i> Email</th>
+                    <th><i class="fa fa-user-cog"></i> Role</th>
+                    <th><i class="fa fa-tools"></i> Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through users and display each user -->
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td>
+                            <% if (user.image) { %>
+                                <img src="/uploads/<%= user.image %>" alt="<%= user.username %>" class="img-thumbnail" style="width: 50px; height: 50px;">
+                            <% } else { %>
+                                <img src="/uploads/default.jpg" alt="Default Image" class="img-thumbnail" style="width: 50px; height: 50px;">
+                            <% } %>
+                        </td>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.role %></td>
+                        <td>
+                            <a href="/edit_user/<%= user._id %>" class="btn btn-sm action-btn" title="Edit">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="/delete_user/<%= user._id %>" class="btn btn-sm action-btn" title="Delete">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <a href="/change_permission/<%= user._id %>" class="btn btn-sm action-btn" title="Change Permissions">
+                                <i class="fa fa-key"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include('layout/footer') %>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous"></script>
+</body>
+</html>

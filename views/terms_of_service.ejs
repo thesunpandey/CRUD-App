@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #f4f4f9;
+    }
+    .navbar {
+      background-color: #1f1f1f;
+    }
+    .nav-link {
+      color: #d3d3d3;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+    }
+    .nav-link:hover {
+      background-color: #343a40;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .main-content {
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+    .main-content h1 {
+      margin-bottom: 1rem;
+      color: #343a40;
+    }
+    .main-content h2, .main-content h3 {
+      margin-top: 1.5rem;
+      color: #495057;
+    }
+    .main-content p, .main-content ul {
+      font-size: 1.1rem;
+      color: #495057;
+    }
+    .main-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <%- include('layout/header') %>
+
+  <div class="container mt-4 main-content">
+    <h1>Terms of Service</h1>
+    <p>These Terms of Service ("Terms") govern your use of our website and services ("Service"). By using our Service, you agree to comply with these Terms. If you do not agree with these Terms, please do not use our Service.</p>
+    
+    <h2>Use of Our Service</h2>
+    <p>You must follow any policies made available to you within the Service. You may use our Service only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Service to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.</p>
+
+    <h3>Content</h3>
+    <p>All content, whether publicly posted or privately transmitted, is the sole responsibility of the person who originated such content. We may not monitor or control the content posted via the Service and, we cannot take responsibility for such content. Any use or reliance on any content or materials posted via the Service or obtained by you through the Service is at your own risk.</p>
+    
+    <h3>Privacy</h3>
+    <p>Our <a href="/privacy_policy">Privacy Policy</a> explains how we treat your personal data and protect your privacy when you use our Service. By using our Service, you agree that we can use such data in accordance with our privacy policies.</p>
+
+    <h3>Prohibited Conduct</h3>
+    <p>You agree not to engage in any of the following prohibited activities:</p>
+    <ul>
+      <li>Copying, distributing, or disclosing any part of the Service in any medium.</li>
+      <li>Using any automated system, including without limitation "robots," "spiders," "offline readers," etc., to access the Service.</li>
+      <li>Transmitting spam, chain letters, or other unsolicited email.</li>
+      <li>Attempting to interfere with, compromise the system integrity or security, or decipher any transmissions to or from the servers running the Service.</li>
+      <li>Taking any action that imposes, or may impose, at our sole discretion, an unreasonable or disproportionately large load on our infrastructure.</li>
+      <li>Uploading invalid data, viruses, worms, or other software agents through the Service.</li>
+      <li>Collecting or harvesting any personally identifiable information, including account names, from the Service.</li>
+      <li>Using the Service for any commercial solicitation purposes.</li>
+    </ul>
+
+    <h3>Limitation of Liability</h3>
+    <p>In no event shall we, nor our directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage.</p>
+
+    <h3>Governing Law</h3>
+    <p>These Terms shall be governed and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
+
+    <h3>Changes to These Terms</h3>
+    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+
+    <h3>Contact Us</h3>
+    <p>If you have any questions about these Terms, please contact us:</p>
+    <ul>
+      <li>By email: contact@example.com</li>
+    </ul>
+  </div>
+
+  <%- include('layout/footer') %>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #f4f4f9;
+    }
+    .navbar {
+      background-color: #1f1f1f;
+    }
+    .nav-link {
+      color: #d3d3d3;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+    }
+    .nav-link:hover {
+      background-color: #343a40;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .main-content {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 3rem;
+    }
+    .main-content h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      color: #343a40;
+    }
+    .main-content p {
+      font-size: 1.1rem;
+      color: #495057;
+    }
+    .team-section {
+      background-color: #f8f9fa;
+      padding: 3rem 0;
+    }
+    .team-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .team-member {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .team-member img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 1rem;
+    }
+    .team-member h5 {
+      margin: 0.5rem 0;
+    }
+    .team-member p {
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <%- include('layout/header') %>
+
+  <div class="container mt-4 main-content">
+    <h1>About Us</h1>
+    <p>Welcome to our CRUD app. This platform is designed to help you manage user data efficiently and effectively. Our team is dedicated to providing a seamless experience, ensuring that your data management tasks are handled with ease.</p>
+  </div>
+
+  <div class="container team-section">
+    <h2>Meet the Team</h2>
+    <div class="row">
+      <div class="col-md-4 team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h5>Suraj Pandey</h5>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="col-md-4 team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h5>Priya Mishra</h5>
+        <p>Lead Developer</p>
+      </div>
+      <div class="col-md-4 team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h5>Shreyash Dwivedi</h5>
+        <p>Project Manager</p>
+      </div>
+    </div>
+  </div>
+
+  <%- include('layout/footer') %>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous"></script>
+</body>
+</html>
